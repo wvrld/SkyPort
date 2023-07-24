@@ -46,7 +46,7 @@ export default function Language(): JSX.Element {
       </Select>
 
       <div className="text-xs text-zinc-400 dark:text-zinc-500">
-        {t`If you would like to help with translations please reach out to`} <Mention href="xwvrld@protonmail.com" />
+        {t`If you would like to help with translations please reach out to`} <Mention href="wvrld.sh" />
       </div>
     </div>
   )
