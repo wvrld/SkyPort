@@ -5,7 +5,7 @@ import { DotPulse } from '@uiball/loaders'
 import axios from 'axios'
 import { KeyAlt, Sparks } from 'iconoir-react'
 import { useTheme } from 'next-themes'
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 import { Button } from './ui/button'
 

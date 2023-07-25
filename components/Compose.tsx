@@ -146,24 +146,24 @@ export default function Compose({ reply, embedRecord, onDone, autoFocus }: Props
       reply,
       ...(embed || embedRecord
         ? {
-          embed: {
-            ...(embed
-              ? {
-                ...embed,
-                images: embed.images.map((e, index) => ({
-                  ...e,
-                  alt: previews?.[index]?.alt ?? '',
-                })),
-              }
-              : null),
-            ...(embedRecord
-              ? {
-                $type: 'app.bsky.embed.record',
-                record: embedRecord,
-              }
-              : null),
-          },
-        }
+            embed: {
+              ...(embed
+                ? {
+                    ...embed,
+                    images: embed.images.map((e, index) => ({
+                      ...e,
+                      alt: previews?.[index]?.alt ?? '',
+                    })),
+                  }
+                : null),
+              ...(embedRecord
+                ? {
+                    $type: 'app.bsky.embed.record',
+                    record: embedRecord,
+                  }
+                : null),
+            },
+          }
         : null),
     }
 
