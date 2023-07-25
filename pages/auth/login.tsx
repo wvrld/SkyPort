@@ -175,13 +175,13 @@ export default function Login(): JSX.Element {
           </div>
 
           <div className="space-y-1">
-            <div className="font-semibold">I don't have a Bluesky account, what now?</div>
+            <div className="font-semibold">I don't have an invite for Bluesky, what now?</div>
             <div className="text-sm text-zinc-500">
-              We advice to create your accounts on{' '}
-              <a href="https://staging.bsky.app/" target="_blank" rel="noreferrer" className="underline">
-                Bluesky
+              You can create your sandbox account on our dev PDS.{' '}
+              <a href="https://dev.skyport.me" target="_blank" rel="noreferrer" className="underline">
+                dev.skyport.me
               </a>{' '}
-              and then login on SkyPort.
+              just dm me for invite! :D
             </div>
           </div>
         </div>
