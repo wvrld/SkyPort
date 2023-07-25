@@ -181,7 +181,7 @@ export default function Login(): JSX.Element {
               <a href="https://dev.skyport.me" target="_blank" rel="noreferrer" className="underline">
                 dev.skyport.me
               </a>{' '}
-              just dm me for invite! :D
+              just dm me for invite! :D xwvrld@protonmail.com
             </div>
           </div>
         </div>
