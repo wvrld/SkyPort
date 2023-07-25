@@ -44,9 +44,12 @@ export default function Login(): JSX.Element {
   }
 
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="grid-cols-2 items-center gap-12 space-y-24 px-12 xl:grid xl:w-3/5 xl:space-y-0 xl:px-0">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex-1 space-y-8 rounded-lg border p-8 shadow-sm">
+    <div className="flex min-h-screen flex-col items-center justify-center md:flex md:h-screen md:items-center md:justify-center">
+      <div className="grid-cols-2 items-start gap-12 space-y-24 px-12 sm:grid sm:w-full sm:space-y-0 sm:px-0 md:grid md:w-3/5 md:space-y-0 md:px-0">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex-1 space-y-8 overflow-auto rounded-lg border p-8 shadow-sm"
+        >
           <div className="flex items-center justify-start space-x-4 text-brand-500">
             <Logo className="h-10 w-10" />
             <div className="mt-1 text-2xl tracking-tighter" style={font.style}>
@@ -157,6 +160,17 @@ export default function Login(): JSX.Element {
             <div className="font-semibold">What about posts, likes, etc?</div>
             <div className="text-sm text-zinc-500">
               Every single bit of data shown on SkyPort comes from the Bsky services.
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <div className="font-semibold">I don't have a Bluesky account, what now?</div>
+            <div className="text-sm text-zinc-500">
+              We advice to create your accounts on{' '}
+              <a href="https://staging.bsky.app/" target="_blank" rel="noreferrer" className="underline">
+                Bluesky
+              </a>{' '}
+              and then login on SkyPort.
             </div>
           </div>
 
