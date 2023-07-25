@@ -5,7 +5,7 @@ import { DotPulse } from '@uiball/loaders'
 import axios from 'axios'
 import { KeyAlt, Sparks } from 'iconoir-react'
 import { useTheme } from 'next-themes'
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 
 import { Button } from './ui/button'
 
@@ -17,7 +17,14 @@ type Props = {
 export default function OpenAI({ onDone }: Props): JSX.Element {
   const { resolvedTheme } = useTheme()
   const [requesting, setRequesting] = useState(false)
-  const [openAiKey, setOpenAiKey] = useState(typeof localStorage !== 'undefined' && localStorage.getItem('OPENAI_KEY'))
+  const [openAiKey, setOpenAiKey] = useState<string | null>(null)
+
+  useEffect(() => {
+    const key = localStorage.getItem('OPENAI_KEY')
+    if (key) {
+      setOpenAiKey(key)
+    }
+  }, [])
 
   if (!openAiKey)
     return (

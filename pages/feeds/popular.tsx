@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { AppBskyFeedDefs } from '@atproto/api'
 import { OutputSchema } from '@atproto/api/dist/client/types/app/bsky/unspecced/getPopularFeedGenerators'
 import { t } from '@lingui/macro'
@@ -15,13 +16,15 @@ import agent from '@/lib/agent'
 
 async function getData(): Promise<OutputSchema> {
   const { data } = await (await agent()).api.app.bsky.unspecced.getPopularFeedGenerators()
-
   return data
 }
 
 export default function PopularFeeds(): JSX.Element {
   const { data, isLoading } = useQuery(['popular-feeds'], getData)
   const [feeds, setFeeds] = useLocalStorage<AppBskyFeedDefs.GeneratorView[]>('FEEDS', [])
+
+  // Add state for search
+  const [search, setSearch] = useState('')
 
   if (isLoading)
     return (
@@ -40,8 +43,20 @@ export default function PopularFeeds(): JSX.Element {
   return (
     <div className="w-full px-12">
       <Page icon={BrightStar} title={t`Popular Feeds`}>
-        <div className="rounded-lg border">
-          {data?.feeds?.map(feed => {
+        <div className="rounded-lg border p-6">
+          {/* Add search input and button */}
+          <div className="mb-4 flex items-center">
+            <input
+              className="border rounded-md p-2 flex-grow mr-2"
+              type="text"
+              placeholder="Search feeds..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+            <Button>Search</Button>
+          </div>
+
+          {data?.feeds?.filter(feed => feed.displayName.toLowerCase().includes(search.toLowerCase())).map(feed => {
             const feedName = feed.uri.split('/').at(-1)
             const feedPath = `/u/${feed.creator.handle}/feed/${feedName}`
             const isFollowing = feeds?.find(f => f.cid === feed.cid)
