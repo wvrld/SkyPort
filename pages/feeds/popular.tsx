@@ -56,6 +56,7 @@ export default function PopularFeeds(): JSX.Element {
             <Button>Search</Button>
           </div>
 
+
           {data?.feeds?.filter(feed => feed.displayName.toLowerCase().includes(search.toLowerCase())).map(feed => {
             const feedName = feed.uri.split('/').at(-1)
             const feedPath = `/u/${feed.creator.handle}/feed/${feedName}`
@@ -144,3 +145,4 @@ function FeedSkeleton(): JSX.Element {
     </div>
   )
 }
+
