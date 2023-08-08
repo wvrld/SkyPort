@@ -218,10 +218,10 @@ function Menu(): JSX.Element {
               {theme === 'light'
                 ? t`Light theme`
                 : theme === 'dark'
-                  ? t`Dark theme`
-                  : theme === 'system'
-                    ? t`System theme`
-                    : null}
+                ? t`Dark theme`
+                : theme === 'system'
+                ? t`System theme`
+                : null}
             </div>
           </button>
         ) : null}

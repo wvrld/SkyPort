@@ -95,18 +95,14 @@ export default function Login(): JSX.Element {
                 </div>
               )}
             </div>
-
             <div className="text-xs text-zinc-400 dark:text-zinc-500">
-              You'll need to generate an{' '}
-              <a
-                href="https://atproto.com/specs/atp#app-passwords"
-                target="_blank"
-                className="underline"
-                rel="noreferrer"
-              >
-                app password
+              By continuing, you agree to the service's{' '}
+              <a href="https://blueskyweb.xyz/support/tos" target="_blank" className="underline" rel="noreferrer">
+                Terms of Service
               </a>{' '}
-              in order to login into SkyPort, this is for your own security.
+              <a href="https://blueskyweb.xyz/support/tos" target="_blank" className="underline" rel="noreferrer">
+                Privacy Policy.
+              </a>
             </div>
           </div>
 

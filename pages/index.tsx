@@ -48,7 +48,7 @@ export default function Home(): JSX.Element {
 
   if (isLoading)
     return (
-      <div className="w-full px-12">
+      <div className="w-full px-4 sm:px-6">
         <Page icon={HomeSimple} title={t`Home`}>
           <div className="space-y-4">
             <Skeleton className="h-32 w-full rounded-lg" />
@@ -62,7 +62,7 @@ export default function Home(): JSX.Element {
     )
 
   return (
-    <div className="w-full px-12">
+    <div className="w-full px-4 sm:px-6">
       <Page icon={HomeSimple} title={t`Home`}>
         <div className="space-y-4">
           <Compose />
