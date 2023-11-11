@@ -43,7 +43,7 @@
     "@uiball/loaders": "^1.2.6",
     "@vercel/analytics": "^1.0.0",
     "@vercel/og": "^0.5.4",
-    "axios": "^1.3.6",
+    "axios": "^1.6.0",
     "boring-avatars": "^1.7.0",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
